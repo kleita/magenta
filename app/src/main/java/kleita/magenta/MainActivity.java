@@ -12,7 +12,9 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        MainAdapter adapter = new MainAdapter(getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.viewpager);
-        viewPager.setAdapter(new MainAdapter(getSupportFragmentManager()));
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(adapter);
     }
 }
