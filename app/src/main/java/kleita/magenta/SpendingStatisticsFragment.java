@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 
 public class SpendingStatisticsFragment extends Fragment
 {
+    private View view;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
@@ -19,13 +21,17 @@ public class SpendingStatisticsFragment extends Fragment
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
-        return inflater.inflate(R.layout.spending_statistics, container,false);
+        return view = inflater.inflate(R.layout.spending_statistics, container,false);
     }
 
     @Override
     public void init()
     {
-        //
+        if(view != null)
+        {
+            view.findViewById(R.id.above).requestLayout();
+            view.findViewById(R.id.above).invalidate();
+        }
     }
 
     @Override

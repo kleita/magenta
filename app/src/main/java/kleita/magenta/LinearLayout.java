@@ -32,10 +32,15 @@ public class LinearLayout extends android.widget.LinearLayout
         ratio = getRatio();
     }
 
+    private android.widget.LinearLayout.LayoutParams lp = new android.widget.LinearLayout.LayoutParams(0, 0);
+
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
     {
+        lp.width = MeasureSpec.getSize(widthMeasureSpec);
+        lp.height = (int)(ratio * MeasureSpec.getSize(heightMeasureSpec));
+        this.setMeasuredDimension(lp.width, lp.height);
+        this.setLayoutParams(lp);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        setMeasuredDimension(widthMeasureSpec, (int)(ratio * heightMeasureSpec));
     }
 }
