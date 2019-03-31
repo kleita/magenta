@@ -23,7 +23,7 @@ public class MainAdapter extends FragmentPagerAdapter implements ViewPager.OnPag
                 return fragments[0] == null ? fragments[0] = new AccountBalanceFragment() : fragments[0];
             case 1:
             case 2:
-                return fragments[1] == null ? fragments[1] = new SpendingStatisticsFragment() : fragments[1];
+                return fragments[position] == null ? fragments[position] = new SpendingStatisticsFragment() : fragments[position];
             default:
                 return null;
         }
@@ -38,18 +38,27 @@ public class MainAdapter extends FragmentPagerAdapter implements ViewPager.OnPag
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixel)
     {
-        android.util.Log.d("TEST", position + " : " + positionOffset);
+        fragments[position].onScroll(positionOffset);
+        if(position + 1 < fragments.length && fragments[position + 1] != null)
+        {
+            fragments[position + 1].onScroll(positionOffset - 1.0f);
+        }
     }
+
+    private int prevPosition;
 
     @Override
     public void onPageSelected(int position)
     {
-        //
+        if(prevPosition != position)
+        {
+            fragments[prevPosition].fini();
+        }
+        fragments[prevPosition = position].init();
     }
 
     @Override
     public void onPageScrollStateChanged(int state)
     {
-        //
     }
 }
