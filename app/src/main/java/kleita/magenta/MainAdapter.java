@@ -17,9 +17,10 @@ public class MainAdapter extends FragmentPagerAdapter
         switch (position)
         {
             case 0:
+                return new AccountBalanceFragment();
             case 1:
             case 2:
-                return new AccountBalanceFragment();
+                return new SpendingStatisticsFragment();
             default:
                 return null;
         }
