@@ -38,10 +38,10 @@ public class MainAdapter extends FragmentPagerAdapter implements ViewPager.OnPag
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixel)
     {
-        fragments[position].onScroll(positionOffset);
         if(position + 1 < fragments.length && fragments[position + 1] != null)
         {
-            fragments[position + 1].onScroll(positionOffset - 1.0f);
+            fragments[position].onScroll(positionOffset, fragments[position + 1].getRatio());
+            fragments[position + 1].onScroll(positionOffset - 1.0f, fragments[position].getRatio());
         }
     }
 

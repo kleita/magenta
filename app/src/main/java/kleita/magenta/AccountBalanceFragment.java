@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 public class AccountBalanceFragment extends Fragment
 {
     private View view;
+    private LinearLayout above;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
@@ -21,7 +22,9 @@ public class AccountBalanceFragment extends Fragment
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
-        return view = inflater.inflate(R.layout.account_balance, container,false);
+        view = inflater.inflate(R.layout.account_balance, container,false);
+        above = view.findViewById(R.id.above);
+        return view;
     }
 
     @Override
@@ -29,8 +32,8 @@ public class AccountBalanceFragment extends Fragment
     {
         if(view != null)
         {
-            view.findViewById(R.id.above).requestLayout();
-            view.findViewById(R.id.above).invalidate();
+            above.requestLayout();
+            above.invalidate();
         }
     }
 
@@ -41,8 +44,21 @@ public class AccountBalanceFragment extends Fragment
     }
 
     @Override
-    public void onScroll(float offset)
+    public void onScroll(float offset, float nextRatio)
     {
-        //
+        if(offset > 0)
+        {
+            above.setRatio((nextRatio - above.RATIO) * offset + above.RATIO);
+        }
+        else
+        {
+            above.setRatio((nextRatio - above.RATIO) * -offset + above.RATIO);
+        }
+    }
+
+    @Override
+    public float getRatio()
+    {
+        return above == null ? 0 : above.RATIO;
     }
 }
