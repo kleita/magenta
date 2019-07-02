@@ -22,8 +22,9 @@ public class MainAdapter extends FragmentPagerAdapter implements ViewPager.OnPag
             case 0:
                 return fragments[0] == null ? fragments[0] = new AccountBalanceFragment() : fragments[0];
             case 1:
-            case 2:
                 return fragments[position] == null ? fragments[position] = new SpendingStatisticsFragment() : fragments[position];
+            case 2:
+                return fragments[position] == null ? fragments[position] = new SpendingHistoryFragment() : fragments[position];
             default:
                 return null;
         }
