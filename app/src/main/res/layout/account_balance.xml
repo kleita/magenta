@@ -5,6 +5,7 @@
     android:layout_height="match_parent">
 
     <kleita.magenta.LinearLayout
+        android:orientation="vertical"
         android:background="@color/background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,9 +14,11 @@
     </kleita.magenta.LinearLayout>
 
     <LinearLayout
+        android:orientation="vertical"
         android:background="@color/colorPrimary"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/under">
     </LinearLayout>
 
 </LinearLayout>
