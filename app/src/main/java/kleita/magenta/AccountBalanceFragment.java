@@ -12,6 +12,13 @@ public class AccountBalanceFragment extends Fragment
     private View view;
     private LinearLayout above;
 
+    private static final float[] attrs = { 13 / 24.0f };
+
+    public AccountBalanceFragment()
+    {
+        super.attrs = AccountBalanceFragment.attrs;
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
@@ -24,6 +31,9 @@ public class AccountBalanceFragment extends Fragment
     {
         view = inflater.inflate(R.layout.account_balance, container,false);
         above = view.findViewById(R.id.above);
+        above.RATIO = attrs[0];
+        above.requestLayout();
+        above.invalidate();
         return view;
     }
 
@@ -44,21 +54,15 @@ public class AccountBalanceFragment extends Fragment
     }
 
     @Override
-    public void onScroll(float offset, float nextRatio)
+    public void onScroll(float offset, float[] next)
     {
         if(offset > 0)
         {
-            above.setRatio((nextRatio - above.RATIO) * offset + above.RATIO);
+            above.setRatio((next[0] - attrs[0]) * offset + attrs[0]);
         }
         else
         {
-            above.setRatio((nextRatio - above.RATIO) * -offset + above.RATIO);
+            above.setRatio((next[0] - attrs[0]) * -offset + attrs[0]);
         }
-    }
-
-    @Override
-    public float getRatio()
-    {
-        return above == null ? 0 : above.RATIO;
     }
 }
