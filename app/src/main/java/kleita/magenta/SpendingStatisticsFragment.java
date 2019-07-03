@@ -12,7 +12,7 @@ public class SpendingStatisticsFragment extends Fragment
     private View view;
     private LinearLayout above;
 
-    private static final float[] attrs = { 6.0f / 13 };
+    private static final float[] attrs = { 6.0f / 13, 0.0f };
 
     public SpendingStatisticsFragment()
     {

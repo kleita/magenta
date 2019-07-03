@@ -12,7 +12,7 @@ public class AccountBalanceFragment extends Fragment
     private View view;
     private LinearLayout above;
 
-    private static final float[] attrs = { 13 / 24.0f };
+    private static final float[] attrs = { 13 / 24.0f, 1.0f };
 
     public AccountBalanceFragment()
     {
