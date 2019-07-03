@@ -31,9 +31,7 @@ public class AccountBalanceFragment extends Fragment
     {
         view = inflater.inflate(R.layout.account_balance, container,false);
         above = view.findViewById(R.id.above);
-        above.RATIO = attrs[0];
-        above.requestLayout();
-        above.invalidate();
+        above.setRatio(attrs[0]);
         return view;
     }
 

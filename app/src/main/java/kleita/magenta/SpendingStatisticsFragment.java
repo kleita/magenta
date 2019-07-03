@@ -31,9 +31,7 @@ public class SpendingStatisticsFragment extends Fragment
     {
         view = inflater.inflate(R.layout.spending_statistics, container,false);
         above = view.findViewById(R.id.above);
-        above.RATIO = attrs[0];
-        above.requestLayout();
-        above.invalidate();
+        above.setRatio(attrs[0]);
         return view;
     }
 
