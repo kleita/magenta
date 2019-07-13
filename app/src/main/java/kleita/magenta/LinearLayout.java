@@ -36,6 +36,24 @@ public class LinearLayout extends android.widget.LinearLayout
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
     {
-        this.setMeasuredDimension(MeasureSpec.getSize(widthMeasureSpec), (int)(ratio * MeasureSpec.getSize(heightMeasureSpec)));
+        final float RATIO_H = 16f, RATIO_W = 9f; // 디자인이 16:9 기준
+        int w = MeasureSpec.getSize(widthMeasureSpec);
+        int h = MeasureSpec.getSize(heightMeasureSpec);
+        float offset_x, offset_y, size_x, size_y;
+        if(w * RATIO_H > h * RATIO_W)
+        {
+            offset_y = 0f;
+            size_y = h;
+            size_x = h / RATIO_H * RATIO_W;
+            offset_x = (w - size_x) / 2;
+        }
+        else
+        {
+            offset_x = 0;
+            size_x = w;
+            size_y = w / RATIO_W * RATIO_H;
+            offset_y = (h - size_y) / 2;
+        }
+        this.setMeasuredDimension(w, (int)(ratio * size_y + offset_y));
     }
 }
