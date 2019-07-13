@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 
 public class LinearLayout extends android.widget.LinearLayout
 {
-    private float ratio;
+    private float ratio = 40f/111f;
 
     public void setRatio(float ratio)
     {
@@ -18,19 +18,16 @@ public class LinearLayout extends android.widget.LinearLayout
     public LinearLayout(Context context)
     {
         super(context);
-        ratio  = 1.0f;
     }
 
     public LinearLayout(Context context, @Nullable AttributeSet attrs)
     {
         super(context, attrs);
-        ratio  = 1.0f;
     }
 
     public LinearLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr)
     {
         super(context, attrs, defStyleAttr);
-        ratio  = 1.0f;
     }
 
     @Override

@@ -5,9 +5,128 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <kleita.magenta.LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorPrimary">
+        </kleita.magenta.LinearLayout>
+
+        <TableLayout
+            android:background="@color/background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btn1"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <Button
+                    android:id="@+id/btn2"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="2" />
+
+                <Button
+                    android:id="@+id/btn3"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="3" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btn4"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="4" />
+
+                <Button
+                    android:id="@+id/btn5"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="5" />
+
+                <Button
+                    android:id="@+id/btn6"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="6" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btn7"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="7" />
+
+                <Button
+                    android:id="@+id/btn8"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="8" />
+
+                <Button
+                    android:id="@+id/btn9"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="9" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btn_b"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="←" />
+
+                <Button
+                    android:id="@+id/btn0"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="0" />
+
+                <Button
+                    android:id="@+id/btn_n"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="●" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
 
 </FrameLayout>
