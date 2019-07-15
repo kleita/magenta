@@ -6,7 +6,7 @@ import android.widget.LinearLayout;
 public class OnLayoutChangeListener implements View.OnLayoutChangeListener
 {
     private LinearLayout above;
-    public float ratio = 40f/111f;
+    public float ratio;
     private int w, h;
 
     public OnLayoutChangeListener(LinearLayout above)
