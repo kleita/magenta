@@ -17,11 +17,13 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/background"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/above"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
