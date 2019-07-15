@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
@@ -41,6 +42,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void setValue(int value)
     {
+        if(value > 100000000)
+        {
+            Toast.makeText(this, "최대 1억입니다.", Toast.LENGTH_SHORT).show();
+            value = 100000000;
+        }
         this.value = value;
         price.setText(String.valueOf(value));
     }
