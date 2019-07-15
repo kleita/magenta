@@ -28,8 +28,9 @@ public class SpendingHistoryFragment extends Fragment
     {
         view = inflater.inflate(R.layout.spending_statistics, container,false);
         above = view.findViewById(R.id.above);
+        listener = new OnChangeListener(above);
+        view.addOnLayoutChangeListener(listener);
         setRatio(attrs[0]);
-        view.addOnLayoutChangeListener(this);
         return view;
     }
 
