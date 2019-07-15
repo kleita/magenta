@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private int value;
     private TextView price;
+    private long lt;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
@@ -44,7 +45,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         if(value > 100000000)
         {
-            Toast.makeText(this, "최대 1억입니다.", Toast.LENGTH_SHORT).show();
+            long curr = System.currentTimeMillis();
+            if(curr - lt > 3000)
+            {
+                Toast.makeText(this, "최대 1억입니다.", Toast.LENGTH_SHORT).show();
+                lt = curr;
+            }
             value = 100000000;
         }
         this.value = value;
