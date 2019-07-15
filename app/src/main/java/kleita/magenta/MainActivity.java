@@ -17,6 +17,6 @@ public class MainActivity extends AppCompatActivity
         ViewPager viewPager = findViewById(R.id.viewpager);
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(adapter);
-        findViewById(R.id.background).addOnLayoutChangeListener(new OnChangeListener(((LinearLayout) findViewById(R.id.above))));
+        findViewById(R.id.background).addOnLayoutChangeListener(new OnLayoutChangeListener(((LinearLayout) findViewById(R.id.above))));
     }
 }

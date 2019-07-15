@@ -28,7 +28,7 @@ public class SpendingStatisticsFragment extends Fragment
     {
         view = inflater.inflate(R.layout.spending_statistics, container,false);
         above = view.findViewById(R.id.above);
-        listener = new OnChangeListener(above);
+        listener = new OnLayoutChangeListener(above);
         view.addOnLayoutChangeListener(listener);
         setRatio(attrs[0]);
         return view;

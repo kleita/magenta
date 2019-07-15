@@ -3,13 +3,13 @@ package kleita.magenta;
 import android.view.View;
 import android.widget.LinearLayout;
 
-public class OnChangeListener implements View.OnLayoutChangeListener
+public class OnLayoutChangeListener implements View.OnLayoutChangeListener
 {
     private LinearLayout above;
     public float ratio = 40f/111f;
     private int w, h;
 
-    public OnChangeListener(LinearLayout above)
+    public OnLayoutChangeListener(LinearLayout above)
     {
         this.above = above;
     }
