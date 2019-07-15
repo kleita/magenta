@@ -9,9 +9,6 @@ import android.view.ViewGroup;
 
 public class AccountBalanceFragment extends Fragment
 {
-    private View view;
-    private LinearLayout above;
-
     private static final float[] attrs = { 13 / 24.0f, 1.0f };
 
     public AccountBalanceFragment()
@@ -31,7 +28,8 @@ public class AccountBalanceFragment extends Fragment
     {
         view = inflater.inflate(R.layout.account_balance, container,false);
         above = view.findViewById(R.id.above);
-        above.setRatio(attrs[0]);
+        setRatio(attrs[0]);
+        view.addOnLayoutChangeListener(this);
         return view;
     }
 
@@ -56,11 +54,11 @@ public class AccountBalanceFragment extends Fragment
     {
         if(offset > 0)
         {
-            above.setRatio((next[0] - attrs[0]) * offset + attrs[0]);
+            setRatio((next[0] - attrs[0]) * offset + attrs[0]);
         }
         else
         {
-            above.setRatio((next[0] - attrs[0]) * -offset + attrs[0]);
+            setRatio((next[0] - attrs[0]) * -offset + attrs[0]);
         }
     }
 }

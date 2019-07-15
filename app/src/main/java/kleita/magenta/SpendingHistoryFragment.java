@@ -9,9 +9,6 @@ import android.view.ViewGroup;
 
 public class SpendingHistoryFragment extends Fragment
 {
-    private View view;
-    private LinearLayout above;
-
     private static final float[] attrs = { 6.0f / 13, 1.0f };
 
     public SpendingHistoryFragment()
@@ -31,7 +28,8 @@ public class SpendingHistoryFragment extends Fragment
     {
         view = inflater.inflate(R.layout.spending_statistics, container,false);
         above = view.findViewById(R.id.above);
-        above.setRatio(attrs[0]);
+        setRatio(attrs[0]);
+        view.addOnLayoutChangeListener(this);
         return view;
     }
 
@@ -56,11 +54,11 @@ public class SpendingHistoryFragment extends Fragment
     {
         if(offset > 0)
         {
-            above.setRatio((next[0] - attrs[0]) * offset + attrs[0]);
+            setRatio((next[0] - attrs[0]) * offset + attrs[0]);
         }
         else
         {
-            above.setRatio((next[0] - attrs[0]) * -offset + attrs[0]);
+            setRatio((next[0] - attrs[0]) * -offset + attrs[0]);
         }
     }
 }
